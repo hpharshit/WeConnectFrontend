@@ -40,7 +40,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "https://0yn9oy7kyc.execute-api.ap-south-1.amazonaws.com/api/user/login",
+        "/api/user/login",
         { email, password },
         config
       );
