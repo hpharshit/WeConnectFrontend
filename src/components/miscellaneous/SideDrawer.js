@@ -45,6 +45,7 @@ function SideDrawer() {
     setNotification,
     chats,
     setChats,
+    setUser,
   } = ChatState();
 
   const toast = useToast();
@@ -52,8 +53,10 @@ function SideDrawer() {
   const history = useHistory();
 
   const logoutHandler = () => {
-    localStorage.removeItem("userInfo");
+    // localStorage.removeItem("userInfo");
+    localStorage.clear();
     history.push("/");
+    setUser(null);
   };
 
   const handleSearch = async () => {
@@ -77,7 +80,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`https://18.233.6.5:5000/api/user?search=${search}`, config);
+      const { data } = await axios.get(`/api/user?search=${search}`, config);
       setLoading(false);
       setSearchResult(data);
       // console.log(searchResult);
@@ -104,7 +107,7 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`https://18.233.6.5:5000/api/chat`, { userId }, config);
+      const { data } = await axios.post(`/api/chat`, { userId }, config);
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
