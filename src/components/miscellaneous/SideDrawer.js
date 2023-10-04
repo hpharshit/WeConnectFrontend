@@ -80,7 +80,10 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`/api/user?search=${search}`, config);
+      const { data } = await axios.get(
+        `https://mgzjhcwsj4.execute-api.us-east-1.amazonaws.com/api/user?search=${search}`,
+        config
+      );
       setLoading(false);
       setSearchResult(data);
       // console.log(searchResult);
@@ -107,7 +110,11 @@ function SideDrawer() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post(`/api/chat`, { userId }, config);
+      const { data } = await axios.post(
+        `https://mgzjhcwsj4.execute-api.us-east-1.amazonaws.com/api/chat`,
+        { userId },
+        config
+      );
 
       if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
       setSelectedChat(data);
@@ -183,7 +190,6 @@ function SideDrawer() {
               />
             </MenuButton>
             <MenuList>
-
               <ProfileModal user={user}>
                 <MenuItem>My Profile</MenuItem>{" "}
               </ProfileModal>
@@ -191,7 +197,6 @@ function SideDrawer() {
               <MenuDivider />
 
               <MenuItem onClick={logoutHandler}>Logout</MenuItem>
-
             </MenuList>
           </Menu>
         </div>
