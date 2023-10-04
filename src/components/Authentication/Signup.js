@@ -53,7 +53,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "https://0yn9oy7kyc.execute-api.ap-south-1.amazonaws.com/api/user",
+        "/api/user",
         {
           name,
           email,

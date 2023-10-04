@@ -77,7 +77,7 @@ function SideDrawer() {
         },
       };
 
-      const { data } = await axios.get(`https://0yn9oy7kyc.execute-api.ap-south-1.amazonaws.com/api/user?search=${search}`, config);
+      const { data } = await axios.get(`http://18.233.6.5:5000/api/user?search=${search}`, config);
       setLoading(false);
       setSearchResult(data);
       // console.log(searchResult);
