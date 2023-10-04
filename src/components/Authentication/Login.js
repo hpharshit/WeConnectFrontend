@@ -40,7 +40,7 @@ const Login = () => {
       };
 
       const { data } = await axios.post(
-        "http://18.233.6.5:5000/api/user/login",
+        "https://18.233.6.5:5000/api/user/login",
         { email, password },
         config
       );
