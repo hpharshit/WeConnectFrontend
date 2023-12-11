@@ -51,7 +51,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `https://mgzjhcwsj4.execute-api.us-east-1.amazonaws.com/api/message/${selectedChat._id}`,
+        `https://h4a5yfpfo2.execute-api.us-east-1.amazonaws.com/api/message/${selectedChat._id}`,
         config
       );
       setMessages(data);
@@ -82,7 +82,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         };
         setNewMessage("");
         const { data } = await axios.post(
-          "https://mgzjhcwsj4.execute-api.us-east-1.amazonaws.com/api/message",
+          "https://h4a5yfpfo2.execute-api.us-east-1.amazonaws.com/api/message",
           {
             content: newMessage,
             chatId: selectedChat,

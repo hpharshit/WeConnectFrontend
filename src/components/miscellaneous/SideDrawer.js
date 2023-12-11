@@ -81,7 +81,7 @@ function SideDrawer() {
       };
 
       const { data } = await axios.get(
-        `https://mgzjhcwsj4.execute-api.us-east-1.amazonaws.com/api/user?search=${search}`,
+        `https://h4a5yfpfo2.execute-api.us-east-1.amazonaws.com/api/user?search=${search}`,
         config
       );
       setLoading(false);
@@ -111,7 +111,7 @@ function SideDrawer() {
         },
       };
       const { data } = await axios.post(
-        `https://mgzjhcwsj4.execute-api.us-east-1.amazonaws.com/api/chat`,
+        `https://h4a5yfpfo2.execute-api.us-east-1.amazonaws.com/api/chat`,
         { userId },
         config
       );
